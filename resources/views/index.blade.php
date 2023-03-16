@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
 <body>
+    
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Navbar</a>
@@ -58,6 +59,7 @@
                     <td>Id</td>
                     <td>Nama</td>
                     <td>NIM</td>
+                    <td>matkul</td>
                     <td>Aksi</td>
                 </tr>
                 @foreach($mahasiswa as $data)
@@ -65,8 +67,10 @@
                     <td>{{$data->id}}</td>
                     <td>{{$data->nama}}</td>
                     <td>{{$data->nim}}</td>
+                    <td></td>
                     <td>
                         <a class="btn btn-warning" href="/mahasiswa/edit{{$data->id}}">Edit</a>
+                        <a class="btn btn-warning" href="{{ URL::to('/mahasiswa/edit'.$data->id)}}">Edit</a>
                         <a class="btn btn-danger" href="/mahasiswa/hapus{{$data->id}}">Hapus</a>
                     </td>
                 </tr>
